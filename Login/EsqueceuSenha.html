@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Esqueceu a senha</title>
+  <style>
+    /* Estilos gerais */
+    body {
+      font-family: Times New Roman, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("fundo.jpg");
+      background-size: cover;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 350px;
+      background-color: #d9d9d9;
+      border-radius: 5px;
+      padding: 60px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    /* Estilos do formulário */
+    .form-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      font-weight: bold;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    
+    .submit-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .form-submit {
+      width: 50%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #f3f3f5;
+      border: none;
+      color: #050505;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 10px;
+      font-size: 16px;
+      border: 2px solid #d9d9d9;
+    }
+
+    .form-submit:hover {
+      background-color: #e0917d;
+    }
+    
+    /* Outros estilos */
+    .title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    
+    .info {
+      margin-bottom: 20px;
+      color: #6b6868;
+    }
+    
+    .success-msg {
+      color: green;
+      font-weight: bold;
+    }
+    
+    .or-line {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .or-line::before,
+    .or-line::after {
+      content: "";
+      flex: 1;
+      border-bottom: 2px solid #bebdbd;
+    }
+    
+    .or-text {
+      margin: 0 10px;
+      color: #6b6868;
+    }
+    
+    .link {
+      margin-top: 40px;
+      color: #6b6868;
+    }
+    
+    .link a {
+      color: #000000;
+      text-decoration: none;
+    }
+    
+    /* Media queries para dispositivos móveis */
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Problemas para entrar?</h1>
+    
+    <p class="info">Insira o seu email, telefone ou nome de usuário e enviaremos um link para você voltar a acessar a sua conta.</p>
+    
+    <form action="/resetar-senha" method="post" onsubmit="return envioSucesso()">
+      <label class="form-label" for="identifier">Email, telefone ou nome de usuário:</label>
+      <input class="form-input" type="text" id="identifier" name="identifier" required>
+      <br><br>
+      <input class="form-submit" type="submit" value="Enviar">
+    </form>
+    
+    <p id="envio-msg"></p>
+    
+    <p class="info">Não consegue redefinir sua senha?</p>
+    
+    <div class="or-line">
+      <span class="or-text">OU</span>
+    </div>
+    
+    <p class="link">Criar nova conta? <a href="Cadastro.html">Registre-se</a></p>
+    
+    <p class="link">Voltar ao <a href="Login-Beauty.html">login</a></p>
+    
+    <script>
+      function envioSucesso() {
+        var email = document.getElementById("identifier").value;
+        if (email !== "") {
+          var msgElement = document.getElementById("envio-msg");
+          msgElement.innerHTML = "Enviado com sucesso!";
+          msgElement.classList.add("success-msg");
+          setTimeout(function() {
+            window.location.href = "Login-Beauty.html";
+          }, 2000);
+          return false;
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>

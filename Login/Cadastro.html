@@ -1,0 +1,160 @@
+<html>
+<head>
+  <title>Tela de Cadastro</title>
+  <style>
+    body {
+      font-family: Times New Roman, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("fundo.jpg");
+      background-size: cover;
+    }
+    
+    form {
+      width: 300px;
+      padding: 85px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #d9d9d9;
+    }
+    
+    form div {
+      margin-bottom: 10px;
+    }
+    
+    form label {
+      display: block;
+      font-weight: bold;
+    }
+    
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form select {
+      width: 100%;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    
+    form .radio-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+    
+    form .radio-group label {
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    
+    form .success-message {
+      color: green;
+      font-size: 16px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .submit-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .form-submit {
+      width: 50%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #f3f3f5;
+      border: none;
+      color: #050505;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 10px;
+      font-size: 16px;
+      border: 2px solid #d9d9d9;
+    }
+
+    .form-submit:hover {
+      background-color: #e0917d;
+    }
+    
+    @media screen and (min-width: 500px) {
+      /* Estilos para telas com largura mínima de 500px */
+      form {
+        width: 400px;
+        padding: 50px;
+      }
+    }
+    
+    @media screen and (min-width: 800px) {
+      /* Estilos para telas com largura mínima de 800px */
+      form {
+        max-width: 320px;
+        padding: 75px;
+      }
+    }
+  </style>
+  <script>
+    function exibirMensagem() {
+      var form = document.getElementById("cadastroForm");
+      var mensagem = document.createElement("div");
+      mensagem.innerHTML = "Cadastro realizado com sucesso!";
+      mensagem.classList.add("success-message");
+      form.appendChild(mensagem);
+
+      setTimeout(function() {
+        window.location.href = "Login-Beauty.html";
+      }, 3000);
+    }
+  </script>
+</head>
+<body>
+  <form id="cadastroForm" onsubmit="event.preventDefault(); exibirMensagem();">
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" id="username" name="username" placeholder="Nome" required>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder= "Email" required>
+    </div>
+
+    <div>
+      <label for="endereco">Endereço:</label>
+      <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
+    </div>
+
+    <div>
+      <label for="cpf">CPF/CNPJ:</label>
+      <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
+    </div>
+
+    <div>
+      <label for="data-nascimento">Data de Nascimento:</label>
+      <input type="date" id="data-nascimento" name="data-nascimento" placeholder= "Data de Nascimento" required>
+    </div>
+
+    <div>
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" placeholder="Senha" required>
+    </div>
+
+    <div class="radio-group">
+      <label>Tipo:</label>
+      <input type="radio" id="cliente" name="tipo" value="cliente" required>
+      <label for="cliente" style="font-size: 16px;">Cliente</label>
+
+      <input type="radio" id="profissional" name="tipo" value="profissional" required>
+      <label for="profissional" style="font-size: 16px;">Profissional</label>
+    </div>
+
+    <div class="submit-button">
+      <input class="form-submit" type="submit" value="Cadastrar">
+    </div>
+  </form>
+</body>
+</html>

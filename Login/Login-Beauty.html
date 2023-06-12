@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tela de Login</title>
+  <style>
+   body {
+      font-family: "Times New Roman", sans-serif;
+      background-image: url("fundo.jpg");
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      background-color: #d9d9d9;
+      border-radius: 5px;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .container header {
+      color: #000000;
+    }
+    
+    .logo {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .logo img {
+      width: 150px;
+      border-radius: 50%;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .form-submit {
+      width: 50%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #f3f3f5;
+      border: none;
+      color: #050505;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 10px;
+      font-size: 16px;
+      border: 2px solid #d9d9d9;
+    }
+
+    .form-submit:hover {
+      background-color: #e0917d;
+    }
+    
+    .forgot-password {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .forgot-password a {
+      color: #000000;
+      text-decoration: none;
+    }
+    
+    
+    .or-line {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .or-line::before,
+    .or-line::after {
+      content: "";
+      flex: 1;
+      border-bottom: 2px solid #bebdbd;
+    }
+    
+    .or-text {
+      margin: 0 10px;
+      color: #6b6868;
+    }
+
+    .cadastre-se {
+      text-align: center;
+      color: #6b6868;
+      margin-top: 30px;
+      font-size: 16px;
+    }
+    .cadastre-se a {
+      color: #0e0d0d;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .error-message {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: 480px) {
+      .container {
+        padding: 20px;
+      }
+
+      .form-submit {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="BeautyMaker.png" alt="BeautyMaker Logo">
+        </div>    
+      </header>
+      <form id="login-form">
+        <div>
+          <label for="username">Usuário:</label>
+          <input type="text" id="username" name="username" placeholder="Usuário" required>
+        </div>
+        <div>
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" placeholder="Senha" required>
+        </div>
+        <input class="form-submit" type="submit" value="Agendar">
+      </form>
+      <p class="error-message" id="error-message" style="display: none;"></p>
+      <div class="forgot-password">
+        <a href="EsqueceuSenha.html">Esqueceu a senha?</a>
+      </div>
+      <div class="or-line">
+        <span class="or-text">OU</span>
+      </div>
+      <div class="cadastre-se">
+         Não tem uma conta? <a href="Cadastro.html">Cadastre-se</a>         
+      </div>
+    </div>
+  </main>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      login();
+    });
+
+    function login() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "admin" && password === "senha123") {
+        window.location.href = "inicio-1.html";
+      } else {
+        var errorMessage = document.getElementById("error-message");
+        errorMessage.style.display = "block";
+        errorMessage.textContent = "Usuário ou senha inválidos.";
+      }
+    }
+  </script>
+</body>
+</html>

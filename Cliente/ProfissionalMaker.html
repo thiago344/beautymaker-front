@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Maker</title>
+  <style>
+    /* Estilos básicos para a página */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-image: linear-gradient(to right, #d9d9d9, #f5bfaf);
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      background-size: 100% 100%;
+    }
+    
+    nav {
+      background-color: #d9d9d9;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li {
+      display: inline;
+      margin-right: 100px;
+    }
+    
+    nav ul li a {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    section {
+      padding: 158px;
+      text-align: center;
+      background-color: #ffe3db;
+    }
+    
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      margin-top: -80px;
+    }
+    
+    section .categoria {
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+    }
+    
+    section .categoria h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    
+    section .produto {
+      text-align: center;
+      margin: 0 50px;
+    }
+    
+    section .produto img {
+      width: 300px;
+      height: 250px;
+    }
+    
+    footer {
+      background-color: #d9d9d9;
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    footer p {
+      margin: 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    
+    .logo h1 {
+      margin-left: 20px;
+      text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Media queries para tornar o layout responsivo */
+    
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 10px;
+      }
+    
+      nav ul li {
+        margin-right: 10px;
+      }
+    
+      section {
+        padding: 10px;
+      }
+    
+      section .categoria {
+        margin: 10px;
+      }
+    
+      section .produto {
+        margin: 0 5px;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      nav ul li {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="BeautyMaker.jpg" alt="Logo Beauty Maker">
+      <h1>Beauty Maker</h1>
+    </div>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="Inicio-1.html">Início</a></li>
+      <li><a href="Servicos.html">Serviços</a></li>
+      <li><a href="QuemSomos.html">Quem Somos?</a></li>
+    </ul>
+  </nav>
+  
+  <section>
+    <h2>Profissionais em Destaque</h2>
+    
+    <div class="categoria">
+      <h3> <a href="Agendamento-1.html">Juliana Pereira</a></h3>
+      <div class="produto">
+        <a href="Agendamento-1.html"><img src="mei-maquiadora.jpg" alt="Foto Maquiador 1"></a>
+        <p>Experiência: 5 anos</p>
+        <p>Especialidade: Maquiagem para casamentos</p>
+      </div>
+    </div>
+    
+    <div class="categoria">
+      <h3> <a href="Agendamento-1.html">Andre Souza</a></h3>
+      <div class="produto">
+        <a href="Agendamento-1.html"><img src="maquiador.jpg" alt="Foto Maquiador 2"></a>
+        <p>Experiência: 3 anos</p>
+        <p>Especialidade: Maquiagem artística</p>
+      </div>
+    </div>
+    
+    <div class="categoria">
+      <h3> <a href="Agendamento-1.html">Ana Martins</a></h3>
+      <div class="produto">
+        <a href="Agendamento-1.html"><img src="maquiadora.jpg" alt="Foto Maquiador 3"></a>
+        <p>Experiência: 8 anos</p>
+        <p>Especialidade: Maquiagem de noivas</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <p>Todos os direitos reservados &copy; 2023 Beauty Maker</p>
+  </footer>
+</body>
+</html>
